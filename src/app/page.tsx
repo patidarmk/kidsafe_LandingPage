@@ -764,8 +764,8 @@ const hotTopics = [
 ];
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-  const toggleFaq = (index) => {
+   const [openIndex, setOpenIndex] = useState<number | null>(null); 
+  const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
