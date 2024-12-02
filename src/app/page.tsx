@@ -562,7 +562,7 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fafafa]  py-10 text-left">
+    <footer className="bg-[#fafafa] dark:bg-gray-800 py-10 text-left ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* <!-- About Section --> */}
@@ -780,16 +780,18 @@ const FAQ = () => {
   };
 
   return (
-    <section className="product-faq py-10 dark:bg-gray-800  ">
+    <section className="product-faq py-10 dark:bg-gray-800 dark:text-white  ">
       <div className="base-maxwidth mx-auto flex flex-col lg:flex-row base-maxwidth  px-4 max-w-7xl">
         {/* FAQ List */}
         <div className="faq-left w-full lg:w-2/3 ">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-6">FAQs</h2>
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-6">
+            FAQs
+          </h2>
           <ul className="faq-list space-y-4">
             {faqData.map((item, index) => (
               <li key={index} className="border-b border-gray-300 pb-4">
                 <p
-                  className="faq-question flex justify-between items-center text-lg font-medium text-gray-700 cursor-pointer"
+                  className="faq-question flex justify-between items-center text-lg font-medium text-gray-700 dark:text-white cursor-pointer"
                   onClick={() => toggleFaq(index)}
                 >
                   <span>{item.question}</span>
@@ -808,7 +810,9 @@ const FAQ = () => {
                   </svg>
                 </p>
                 {openIndex === index && (
-                  <p className="faq-answer mt-2 text-gray-600">{item.answer}</p>
+                  <p className="faq-answer mt-2 text-gray-600 dark:text-white">
+                    {item.answer}
+                  </p>
                 )}
               </li>
             ))}
@@ -870,7 +874,7 @@ export default function Home() {
       <InstallationSteps />
 
       {/* Social Media Section */}
-      <section className="py-10 px-4 dark:text-white  ">
+      <section className="py-10 px-4 dark:bg-gray-800 dark:text-white  ">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white text-center">
             Social Media Trackers
