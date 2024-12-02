@@ -1,12 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import app from '../assets/images/smartphone.png';
 import backup from '../assets/images/backup.png';
-import bg_image from '../assets/images/main_pic.jpg';
 import browserHistory from '../assets/images/time-management.png';
 import calender from '../assets/images/google-calendar.png';
-import conversion from '../assets/images/conversation.png';
 import convo from '../assets/images/conversation.png';
 import fb from '../assets/images/facebook.png';
 import instagram from '../assets/images/instagram.png';
@@ -14,7 +13,6 @@ import logo from '../assets/images/logo_.png';
 import map from '../assets/images/map.png';
 import message from '../assets/images/comment.png';
 import mobileImage from '../assets/images/mobile.png';
-import phone from '../assets/images/mobile.png';
 import pic from '../assets/images/picture.png';
 import process from '../assets/images/process.png';
 import realtimealert from '../assets/images/alert.png';
@@ -35,35 +33,35 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div className="text-2xl font-bold text-blue-600 flex items-center">
           <Image src={logo} alt="logo" width={50} height={50} />
-          <a href="/" className="ml-2 text-gray-800 ">
+          <Link href="/" className="ml-2 text-gray-800 ">
             Mobile Tracker
-          </a>
+          </Link>
         </div>
         <div className="hidden md:flex space-x-6">
-          <a
+          <Link
             href="#features"
             className="text-gray-700 md:text-black hover:text-blue-600  transition duration-300"
           >
             Features
-          </a>
-          <a
+          </Link>
+          <Link
             href="#installation"
             className="text-gray-700 md:text-black hover:text-blue-600  transition duration-300"
           >
             Installation
-          </a>
-          <a
+          </Link>
+          <Link
             href="#social"
             className="text-gray-700 md::text-black hover:text-blue-600  transition duration-300"
           >
             Social Media
-          </a>
-          <a
+          </Link>
+          <Link
             href="#contact"
             className="text-gray-700 md:text-black hover:text-blue-600  transition duration-300"
           >
             Contact
-          </a>
+          </Link>
         </div>
         <div className="md:hidden">
           <button
@@ -98,30 +96,30 @@ const Navbar = () => {
       </div>
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="px-4 py-2 flex flex-col justify-around bg-white">
-          <a
+          <Link
             href="#features"
             className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
           >
             Features
-          </a>
-          <a
+          </Link>
+          <Link
             href="#installation"
             className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
           >
             Installation
-          </a>
-          <a
+          </Link>
+          <Link
             href="#social"
             className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
           >
             Social Media
-          </a>
-          <a
+          </Link>
+          <Link
             href="#contact"
             className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
@@ -161,22 +159,22 @@ const HeroSection = () => {
             </li>
           </ul>
           <div className="btn-group mt-6 flex space-x-4">
-            <a
+            <Link
               href="/kidsguard-pro-pricing/?position=kgp_banner"
               className="base-btn bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition duration-300"
             >
               Login
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://demo.clevguard.com?site=www.clevguard.com&amp;language=en"
               className="base-btn bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition duration-300"
             >
               View Demo
-            </a>
+            </Link>
           </div>
           {/* <div className="download-btn mt-6 space-x-4">
             <div className="btn-linked-external inline-block">
-              <a
+              <Link
                 className="linked-to-appstore"
                 href="https://apps.apple.com/us/app/kidsguard-pro-phone-monitoring/id6449023572?l=en-us"
                 target="_blank"
@@ -186,11 +184,11 @@ const HeroSection = () => {
                   alt="App Store"
                   className="h-10"
                 />
-              </a>
+             </Link>
               <p className="text-center">iPhone/iPad</p>
             </div>
             <div className="btn-linked-external inline-block">
-              <a
+              <Link
                 className="linked-to-googleplay"
                 href="https://play.google.com/store/apps/details?id=com.clevguard.kidsguardpro.parent&amp;referrer=utm_source%3Dclevguard.com%26utm_medium%3Dproduct%26utm_campaign%3Dproduct_page"
                 target="_blank"
@@ -200,12 +198,12 @@ const HeroSection = () => {
                   alt="Google Play"
                   className="h-10"
                 />
-              </a>
+             </Link>
               <p className="text-center">Android</p>
             </div>
           </div> */}
           {/* <div className="product-video mt-6">
-            <a
+            <Link
               href="https://www.youtube.com/embed/zt8CkI_74B0"
               className="base-link-video text-blue-600 flex items-center"
             >
@@ -219,7 +217,7 @@ const HeroSection = () => {
               >
                 <path d="M7 4.5v7l5-3.5-5-3.5z" fill="currentColor" />
               </svg>
-            </a>
+           </Link>
           </div> */}
         </div>
         <div className="right md:w-1/2 mt-8 md:mt-0">
@@ -279,18 +277,18 @@ const FeatureSection = () => {
           ))}
         </ul>
         <div className="btn-link mt-8 flex justify-center space-x-4">
-          <a
+          <Link
             href="https://account.clevguard.com"
             className="base-btn base-btn-border-orange px-6 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition duration-300"
           >
             Try It Free
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="base-btn base-btn-border-blue px-6 py-2 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition duration-300"
           >
             View Demo
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -299,12 +297,12 @@ const FeatureSection = () => {
 
 const InstallationSteps = () => {
   return (
-    <section className="py-10 px-4">
+    <section className="py-10 px-4 dark:bg-gray-800">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white text-center">
           Installation Steps
         </h2>
-        <p className="mb-8 text-gray-600">
+        <p className="mb-8 text-gray-600 dark:text-white ">
           Follow these simple steps to get started with tracking.
         </p>
         <div className=" flex flex-col gap-8 md:gap-0 md:flex-row w-full ">
@@ -320,7 +318,7 @@ const InstallationSteps = () => {
               <h3 className="font-semibold mb-1 text-[20px] text-center">
                 1. Creating an Account
               </h3>
-              <p className="text-center mb-2 text-gray-700">
+              <p className="text-center mb-2 text-gray-700 dark:text-white ">
                 Create an account by simply entering your e-mail address and
                 password.
               </p>
@@ -344,7 +342,7 @@ const InstallationSteps = () => {
               <h3 className="font-semibold mb-1 text-[20px] text-center">
                 2. Installation and Configuration
               </h3>
-              <p className="text-center mb-2 text-gray-700">
+              <p className="text-center mb-2 text-gray-700 dark:text-white ">
                 Download and install the application by following the
                 explanation video.
               </p>
@@ -368,7 +366,7 @@ const InstallationSteps = () => {
               <h3 className="font-semibold mb-1 text-[20px] text-center">
                 3. Phone Tracking
               </h3>
-              <p className="text-center mb-2 text-gray-700">
+              <p className="text-center mb-2 text-gray-700 dark:text-white ">
                 Log in to the Kidsafe and start tracking the phone call history,
                 message,browser history etc.
               </p>
@@ -581,24 +579,24 @@ const Footer = () => {
             <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
             <ul>
               <li>
-                <a href="/features" className=" hover:text-[#007bff]">
+                <Link href="/features" className=" hover:text-[#007bff]">
                   Features
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/pricing" className=" hover:text-[#007bff]">
+                <Link href="/pricing" className=" hover:text-[#007bff]">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog" className=" hover:text-[#007bff]">
+                <Link href="/blog" className=" hover:text-[#007bff]">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className=" hover:text-[#007bff]">
+                <Link href="/contact" className=" hover:text-[#007bff]">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -608,24 +606,24 @@ const Footer = () => {
             <h2 className="text-lg font-semibold mb-4">Support</h2>
             <ul className="text-left">
               <li>
-                <a href="/help" className=" hover:text-[#007bff]">
+                <Link href="/help" className=" hover:text-[#007bff]">
                   Help Center
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/faq" className=" hover:text-[#007bff]">
+                <Link href="/faq" className=" hover:text-[#007bff]">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className=" hover:text-[#007bff]">
+                <Link href="/terms" className=" hover:text-[#007bff]">
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/privacy" className=" hover:text-[#007bff]">
+                <Link href="/privacy" className=" hover:text-[#007bff]">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -635,18 +633,30 @@ const Footer = () => {
             <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
             <p className=" mb-4">Email: support@example.com</p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className=" hover:text-[#007bff]">
+              <Link
+                href="https://facebook.com"
+                className=" hover:text-[#007bff]"
+              >
                 <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://twitter.com" className=" hover:text-[#007bff]">
+              </Link>
+              <Link
+                href="https://twitter.com"
+                className=" hover:text-[#007bff]"
+              >
                 <i className="fab fa-twitter"></i>
-              </a>
-              <a href="https://linkedin.com" className=" hover:text-[#007bff]">
+              </Link>
+              <Link
+                href="https://linkedin.com"
+                className=" hover:text-[#007bff]"
+              >
                 <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://instagram.com" className=" hover:text-[#007bff]">
+              </Link>
+              <Link
+                href="https://instagram.com"
+                className=" hover:text-[#007bff]"
+              >
                 <i className="fab fa-instagram"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -764,13 +774,13 @@ const hotTopics = [
 ];
 
 const FAQ = () => {
-   const [openIndex, setOpenIndex] = useState<number | null>(null); 
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="product-faq py-10 ">
+    <section className="product-faq py-10 dark:bg-gray-800  ">
       <div className="base-maxwidth mx-auto flex flex-col lg:flex-row base-maxwidth  px-4 max-w-7xl">
         {/* FAQ List */}
         <div className="faq-left w-full lg:w-2/3 ">
@@ -803,13 +813,13 @@ const FAQ = () => {
               </li>
             ))}
           </ul>
-          <a
+          <Link
             href="/product-faq/?index=1"
             className="base-btn mt-4 inline-block text-blue-600 border border-blue-600 py-2 px-4 rounded hover:bg-blue-600 hover:text-white transition-colors"
             target="_blank"
           >
             More FAQs
-          </a>
+          </Link>
         </div>
 
         {/* Hot Topics */}
@@ -820,14 +830,14 @@ const FAQ = () => {
           <ul className="space-y-2">
             {hotTopics.map((topic, index) => (
               <li key={index} className="topic-link">
-                <a
+                <Link
                   href={topic.link}
                   className="text-blue-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {topic.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -849,23 +859,23 @@ export default function Home() {
         <p className="text-lg">
           The easiest way to keep track of your mobile devices.
         </p>
-        <a
+        <Link
           href="#features"
           className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 hover:bg-gray-200 mt-4 inline-block"
         >
           Get Started
-        </a>
+        </Link>
       </header>
 
       <InstallationSteps />
 
       {/* Social Media Section */}
-      <section className="py-10 px-4 ">
+      <section className="py-10 px-4 dark:text-white  ">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white text-center">
             Social Media Trackers
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-gray-600 dark:text-white">
             Monitor social app activities of people you love, from chat history
             to calls.
           </p>
@@ -911,12 +921,12 @@ export default function Home() {
           actions or misuse. By proceeding, you acknowledge that Mobile Tracker
           Free is not liable for damages resulting from improper usage
         </p>
-        {/* <a
+        {/* <Link
           href="/signup" // Link to your sign-up page
           className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 hover:bg-gray-200"
         >
           Sign Up Now
-        </a> */}
+       </Link> */}
       </section>
     </div>
   );
