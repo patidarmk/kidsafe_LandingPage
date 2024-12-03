@@ -63,12 +63,7 @@ const Navbar = () => {
             Contact
           </Link>
         </div>
-        <button
-          onClick={toggleDarkMode}
-          className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 dark:text-white text-gray-800"
-        >
-          {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
-        </button>
+
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
