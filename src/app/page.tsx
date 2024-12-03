@@ -63,6 +63,12 @@ const Navbar = () => {
             Contact
           </Link>
         </div>
+        <button
+          onClick={toggleDarkMode}
+          className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 dark:text-white text-gray-800"
+        >
+          {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
+        </button>
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -272,7 +278,9 @@ const FeatureSection = () => {
                 />
                 <p className="text-[20px] font-semibold">{feature?.title}</p>
               </div>
-              <p className="cutting-desc  text-gray-700">{feature.desc}</p>
+              <p className="cutting-desc  text-gray-700 dark:text-gray-300">
+                {feature.desc}
+              </p>
             </div>
           ))}
         </ul>
@@ -302,7 +310,7 @@ const InstallationSteps = () => {
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white text-center">
           Installation Steps
         </h2>
-        <p className="mb-8 text-gray-600 dark:text-white ">
+        <p className="mb-8 text-gray-600 dark:text-gray-300 ">
           Follow these simple steps to get started with tracking.
         </p>
         <div className=" flex flex-col gap-8 md:gap-0 md:flex-row w-full ">
@@ -318,7 +326,7 @@ const InstallationSteps = () => {
               <h3 className="font-semibold mb-1 text-[20px] text-center">
                 1. Creating an Account
               </h3>
-              <p className="text-center mb-2 text-gray-700 dark:text-white ">
+              <p className="text-center mb-2 text-gray-700 dark:text-gray-300 ">
                 Create an account by simply entering your e-mail address and
                 password.
               </p>
@@ -342,7 +350,7 @@ const InstallationSteps = () => {
               <h3 className="font-semibold mb-1 text-[20px] text-center">
                 2. Installation and Configuration
               </h3>
-              <p className="text-center mb-2 text-gray-700 dark:text-white ">
+              <p className="text-center mb-2 text-gray-700 dark:text-gray-300 ">
                 Download and install the application by following the
                 explanation video.
               </p>
@@ -366,7 +374,7 @@ const InstallationSteps = () => {
               <h3 className="font-semibold mb-1 text-[20px] text-center">
                 3. Phone Tracking
               </h3>
-              <p className="text-center mb-2 text-gray-700 dark:text-white ">
+              <p className="text-center mb-2 text-gray-700 dark:text-gray-300 ">
                 Log in to the Kidsafe and start tracking the phone call history,
                 message,browser history etc.
               </p>
