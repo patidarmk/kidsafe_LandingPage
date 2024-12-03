@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import app from '../assets/images/smartphone.png';
@@ -21,103 +23,158 @@ import snapchat from '../assets/images/snapchat.png';
 import tiktok from '../assets/images/tiktok.png';
 import track from '../assets/images/data.png';
 import twitter from '../assets/images/twitter.png';
-import { useState } from 'react';
 import video from '../assets/images/multimedia.png';
 import whatsapp from '../assets/images/whatsapp.png';
 import youtube from '../assets/images/youtube.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    const root = document.documentElement;
+
+    if (isDarkMode) {
+      root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // Apply saved theme or OS preference
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+      document.documentElement.classList.add('dark');
+      setIsDarkMode(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDarkMode(false);
+    }
+  }, []);
+
   return (
-    <nav className="bg-white shadow  sticky top-0 z-50">
+    <nav className="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        {/* Logo Section */}
         <div className="text-2xl font-bold text-blue-600 flex items-center">
           <Image src={logo} alt="logo" width={50} height={50} />
-          <Link href="/" className="ml-2 text-gray-800 ">
+          <Link href="/" className="ml-2 text-gray-800 dark:text-gray-200">
             Mobile Tracker
           </Link>
         </div>
+
+        {/* Links for Desktop */}
         <div className="hidden md:flex space-x-6">
           <Link
             href="#features"
-            className="text-gray-700 md:text-black hover:text-blue-600  transition duration-300"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition duration-300"
           >
             Features
           </Link>
           <Link
             href="#installation"
-            className="text-gray-700 md:text-black hover:text-blue-600  transition duration-300"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition duration-300"
           >
             Installation
           </Link>
           <Link
             href="#social"
-            className="text-gray-700 md::text-black hover:text-blue-600  transition duration-300"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition duration-300"
           >
             Social Media
           </Link>
           <Link
             href="#contact"
-            className="text-gray-700 md:text-black hover:text-blue-600  transition duration-300"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition duration-300"
           >
             Contact
           </Link>
+          {/* Dark Mode Toggle */}
         </div>
+        <button
+          onClick={toggleDarkMode}
+          className={`p-2 rounded-full w-[35px] h-[35px] ${
+            !isDarkMode ? 'bg-gray-600' : 'bg-gray-200'
+          }   dark:bg-gray-700 flex items-center justify-center transition-all duration-300`}
+        >
+          {!isDarkMode ? '🌙' : '☀️'}
+        </button>
 
+        {/* Hamburger Menu for Mobile */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="focus:outline-none text-gray-800 md:text-white"
+            className="focus:outline-none text-gray-800 dark:text-gray-200"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {isOpen ? (
+            {isOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
                   d="M6 18L18 6M6 6l12 12"
                 />
-              ) : (
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
                   d="M4 6h16M4 12h16m-7 6h7"
                 />
-              )}
-            </svg>
+              </svg>
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="px-4 py-2 flex flex-col justify-around bg-white">
+        <div className="px-4 py-2 flex flex-col bg-white dark:bg-gray-900">
           <Link
             href="#features"
-            className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
+            className="text-black dark:text-white hover:text-blue-600 transition duration-300 px-4 py-2"
           >
             Features
           </Link>
           <Link
             href="#installation"
-            className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
+            className="text-black dark:text-white hover:text-blue-600 transition duration-300 px-4 py-2"
           >
             Installation
           </Link>
           <Link
             href="#social"
-            className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
+            className="text-black dark:text-white hover:text-blue-600 transition duration-300 px-4 py-2"
           >
             Social Media
           </Link>
           <Link
             href="#contact"
-            className="text-[black] hover:text-blue-800 transition duration-300 px-4 py-2"
+            className="text-black dark:text-white hover:text-blue-600 transition duration-300 px-4 py-2"
           >
             Contact
           </Link>
@@ -126,7 +183,6 @@ const Navbar = () => {
     </nav>
   );
 };
-
 const HeroSection = () => {
   return (
     <section className="banner bg-white dark:bg-gray-800">
@@ -271,7 +327,9 @@ const FeatureSection = () => {
                   width={50}
                   height={50}
                 />
-                <p className="text-[20px] font-semibold">{feature?.title}</p>
+                <p className="text-[20px] font-semibold dark:text-[white]">
+                  {feature?.title}
+                </p>
               </div>
               <p className="cutting-desc  text-gray-700 dark:text-gray-300">
                 {feature.desc}
@@ -318,7 +376,7 @@ const InstallationSteps = () => {
               height={50}
             />
             <div className="text-left">
-              <h3 className="font-semibold mb-1 text-[20px] text-center">
+              <h3 className="font-semibold mb-1 text-[20px] text-center dark:text-[white]">
                 1. Creating an Account
               </h3>
               <p className="text-center mb-2 text-gray-700 dark:text-gray-300 ">
@@ -342,7 +400,7 @@ const InstallationSteps = () => {
               height={50}
             />
             <div className="">
-              <h3 className="font-semibold mb-1 text-[20px] text-center">
+              <h3 className="font-semibold mb-1 text-[20px] text-center dark:text-[white]">
                 2. Installation and Configuration
               </h3>
               <p className="text-center mb-2 text-gray-700 dark:text-gray-300 ">
@@ -366,7 +424,7 @@ const InstallationSteps = () => {
               height={50}
             />
             <div className="text-left">
-              <h3 className="font-semibold mb-1 text-[20px] text-center">
+              <h3 className="font-semibold mb-1 text-[20px] text-center dark:text-[white]">
                 3. Phone Tracking
               </h3>
               <p className="text-center mb-2 text-gray-700 dark:text-gray-300 ">
@@ -565,7 +623,7 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fafafa] dark:bg-gray-800 py-10 text-left ">
+    <footer className="bg-[#fafafa] dark:bg-gray-800 py-10 text-left dark:text-gray-300 ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* <!-- About Section --> */}
