@@ -1,6 +1,7 @@
+import './globals.css';
+
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -14,8 +15,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Kidsafe360',
-  description: 'Free Mobile tracker ',
+  title: 'Kidsafe360 | Free Mobile tracker | Cell Tracker | Phone Tracker ',
+  description:
+    'Kidsafe360 is a free application for monitoring & tracking SMS, MMS, Calls, Recording, Locations,Photo, Facebook , WhatsApp, Camera,Internet Activity',
 };
 
 export default function RootLayout({
